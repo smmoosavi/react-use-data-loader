@@ -1,0 +1,53 @@
+{
+  "name": "react-use-data-loader",
+  "version": "0.0.1",
+  "description": "React hook for loading data",
+  "main": "dist/index.js",
+  "repository": "git@github.com:smmoosavi/react-use-data-loader.git",
+  "author": "Seyyed Morteza Moosavi <se.mo.moosavi@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "clean": "rimraf lib dist es coverage",
+    "test": "jest",
+    "build": "babel src --out-dir dist",
+    "format": "prettier --write '{src,test}/**/*.js'",
+    "format:check": "prettier --list-different '{src,test}/**/*.js'",
+    "lint": "eslint src test",
+    "prepare": "npm run clean && npm run format:check && npm run lint && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.8.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-jsx": "^6.0.2",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^1.1.3",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.3",
+    "rimraf": "^2.6.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format:check && npm run lint && npm test"
+    }
+  },
+  "jest": {
+    "testRegex": "(/test/.*\\.test.js)$",
+    "collectCoverage": true
+  }
+}
