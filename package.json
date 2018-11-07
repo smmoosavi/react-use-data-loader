@@ -3,12 +3,14 @@
   "version": "0.0.1",
   "description": "React hook for loading data",
   "main": "dist/index.js",
+  "typings": "./index.d.ts",
   "repository": "git@github.com:smmoosavi/react-use-data-loader.git",
   "author": "Seyyed Morteza Moosavi <se.mo.moosavi@gmail.com>",
   "license": "MIT",
   "files": [
     "dist",
-    "src"
+    "src",
+    "index.d.ts"
   ],
   "scripts": {
     "clean": "rimraf lib dist es coverage",
