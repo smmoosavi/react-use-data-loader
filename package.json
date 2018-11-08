@@ -12,6 +12,11 @@
     "src",
     "index.d.ts"
   ],
+  "keywords": [
+    "react",
+    "react-hooks",
+    "load-data"
+  ],
   "scripts": {
     "clean": "rimraf lib dist es coverage",
     "test": "jest",
