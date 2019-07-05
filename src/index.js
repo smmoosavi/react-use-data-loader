@@ -31,25 +31,22 @@ export const useDataLoader = (getData, ...args) => {
     loading: true,
   })
 
-  useEffect(
-    () => {
-      let cancel = false
+  useEffect(() => {
+    let cancel = false
 
-      dispatch({ type: 'get' })
-      getData(...args)
-        .then(data => {
-          !cancel && dispatch({ type: 'success', payload: { data } })
-        })
-        .catch(error => {
-          !cancel && dispatch({ type: 'error', payload: { error } })
-        })
+    dispatch({ type: 'get' })
+    getData(...args)
+      .then(data => {
+        !cancel && dispatch({ type: 'success', payload: { data } })
+      })
+      .catch(error => {
+        !cancel && dispatch({ type: 'error', payload: { error } })
+      })
 
-      return () => {
-        cancel = true
-      }
-    },
-    [nonce, ...args],
-  )
+    return () => {
+      cancel = true
+    }
+  }, [nonce, ...args])
 
   const retry = () => {
     setNonce(Date.now())
